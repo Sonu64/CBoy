@@ -19,7 +19,6 @@ int main(){
 int gcd(int *n1, int *n2) {
  while(1)
   {
-    printf("H");
     int quotient = *n1 / *n2;
     int result = *n1 - quotient* *n2;
     *n1 = *n2;
