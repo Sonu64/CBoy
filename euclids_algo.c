@@ -3,7 +3,7 @@ EUCLID'S ALGORITHM : steps
 1. quotient = DIVIDE N1 BY N2
 2. result = SUBTRACT N2 x REMAINDER FROM N1
 3. N1 = N2
-4. N2 = bomb
+4. N2 = quotient
 5. WHEN WE GET A 0 IN STEP2, STOP AND RETURN N2
 ***/
 
