@@ -28,8 +28,8 @@ int main() {
 void xstrcpy(char *target, const char *source) {
     while (*source != '\0') {
         *target = *source;
-        *target++;
-        *source++;
+        target++;
+        source++;
     }
     *target = '\0';
 }
