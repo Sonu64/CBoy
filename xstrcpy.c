@@ -3,6 +3,14 @@
 #define MAX 100
 
 void xstrcpy(char *, const char *);
+/*
+While passing values, keep your head cool.... because if you think
+we will pass something of the kind &'n' where n is anything, then you are wrong.
+
+REMEMBER: Whenever we are passing an array entirely, we are PASSING THE "ADDRESS 
+OF THE ZEROTH ELEMENT", I.E here the address of the zeroth element of the char 
+arrays.
+*/
 
 int main() {
     char yourString[MAX], myString[MAX], myString2[MAX];
