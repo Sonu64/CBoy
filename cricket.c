@@ -10,6 +10,8 @@ struct player
 };
 
 void displayContent(struct player*);
+// taking by reference, need to use pointer '->' notation
+//caution//
 /* FOR QSORT => int comparator(const void* p1, const void* p2);*/
 
 int main()
@@ -33,6 +35,13 @@ int main()
         {
             if(team[i].avgRuns > team[j].avgRuns)
             {
+                /* 
+                remember temp is a structure 
+                able to contain only one structure, but 
+                team is an array of structures....
+                
+                like int temp...call up
+                */
                 temp = team[i];
                 team[i] = team[j];
                 team[j] = temp;
@@ -43,14 +52,15 @@ int main()
     for(int i = 0; i < 5; i++)
     {
         displayContent(&team[i]);
+        /*
+        passing the address of zeroth element of the struct
+        array. To get values from the struct, we will
+        use <StructureName> -> <PropertyName>
+        */
     }
 
 }
 
-int comparator (const void * p1, const void * p2)
-{
-  return (*(int*) - *(int*)p2);
-}
 
 void displayContent(struct player *dost)
 {
