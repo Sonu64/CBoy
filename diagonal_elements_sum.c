@@ -4,11 +4,14 @@
 // Prototypes
 int findDiagonalSum(int[MAX][MAX]);
 
+// Global Stuff :|
+int i, j;
+
 int main()
 {
-    int arr[MAX][MAX], i, j, sum = 0;
+    int arr[MAX][MAX], sum = 0;
 
-    printf("Enter elements one-by-one...");
+    printf("Enter elements one-by-one...\n");
 
     for(i = 0; i < MAX; i++)
     {
@@ -20,6 +23,10 @@ int main()
         printf("\n");
     }
 
+    sum = findDiagonalSum(arr);
+
+    printf("Sum of diagonal elements is %d\n", sum);
+
     return 0;
 }
 
@@ -27,5 +34,11 @@ int main()
 // Definition
 int findDiagonalSum(int arr[MAX][MAX])
 {
-    return 67;
+    int sum = 0;
+    for(i = 0; i < MAX; i++)
+    {
+        sum += arr[i][i];
+    }
+
+    return sum;
 }
