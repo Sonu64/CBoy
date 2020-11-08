@@ -24,11 +24,11 @@ int xstrcmp(char *fs, char *ss)
         }
         else
         {
-            diff += *fs - *ss;
+            diff += *fs - *ss; // ASCII value difference
             break;
         }
         fs++;
-        ss++;
+        ss++; // Pointer arithmetic, going to the next memory location for both the character arrays
     }
     return diff;
 }
