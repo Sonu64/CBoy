@@ -10,6 +10,7 @@ struct NODE *HEAD = NULL;
 
 void appendAtEnd(int);
 void insertAtBeginning(int);
+void insertAtPosition(int, int);
 void display();
 
 int main() {
@@ -20,6 +21,7 @@ int main() {
         printf("\n");
         printf("Enter 1 to enter data at the end\n");
         printf("Enter 2 to enter data at the beginning:\n");
+        printf("Enter 3 to enter data after a position:\n");
         printf("Enter 0 to quit entering and display list\n");
         printf("Your choice: ");
         scanf("%d", &prompt);
@@ -32,6 +34,14 @@ int main() {
             printf("Enter the data: ");
             scanf("%d", &data);
             insertAtBeginning(data);
+        }
+        else if(prompt == 3) {
+            printf("Enter the position after which you want to insert: ");
+            int pos;
+            scanf("%d", &pos);
+            printf("Enter the data: ");
+            scanf("%d", &data);
+            insertAtPosition(pos, data);
         }
     } while(prompt != 0);
 
@@ -65,6 +75,25 @@ void insertAtBeginning(int data) {
     temp->value = data;
     temp->link = HEAD;
     HEAD = temp;
+}
+
+void insertAtPosition(int pos, int data) {
+    struct NODE *temp, *curr = HEAD;
+
+    while(pos > 1 && curr != NULL) {
+        curr = curr->link;
+        pos--;
+    }
+    if(curr == NULL) {
+        printf("Sorry, Position is outside list !\n");
+        return ;
+    }
+
+    temp = (struct NODE*)malloc(sizeof(struct NODE));
+    temp->value = data;
+    temp->link = curr->link;
+    curr->link = temp;
+
 }
 
 void display() {
